@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scroll Sequence — Nature's Beauty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@300;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- tall scroll track; the canvas stays pinned while you scroll through the frames -->
+  <section class="sequence" id="sequence">
+    <div class="sticky">
+      <canvas id="seq"></canvas>
+      <div class="overlay">
+        <span class="eyebrow">Nature's Beauty</span>
+        <h1>Watch it bloom</h1>
+        <p>Scroll to play the sequence</p>
+      </div>
+      <div class="loader" id="loader"><span></span></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

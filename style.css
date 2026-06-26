@@ -1,0 +1,37 @@
+:root{
+  --ink:#3a2420;
+  --coral:#e86a5a;
+  --coral-deep:#b14334;
+  --cream:#fff8f4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+body{background:#1a0f0d;color:var(--cream);font-family:'Jost',sans-serif;-webkit-font-smoothing:antialiased}
+
+/* SCROLL TRACK ----------------------------------------------------
+   Height = how much scroll distance the sequence is stretched over.
+   400vh ≈ 3 extra screens of scrolling to play all frames.        */
+.sequence{height:400vh;position:relative}
+
+/* the canvas stays fixed in view while the track scrolls past */
+.sticky{position:sticky;top:0;height:100vh;width:100%;overflow:hidden}
+#seq{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* text overlay on top of the footage */
+.overlay{
+  position:absolute;left:0;bottom:12vh;width:100%;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  text-shadow:0 2px 30px rgba(0,0,0,.5);pointer-events:none;
+}
+.overlay .eyebrow{
+  text-transform:uppercase;letter-spacing:.32em;font-size:.72rem;font-weight:500;
+  color:#ffd4c6;margin-bottom:14px;
+}
+.overlay h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,7vw,5.5rem);line-height:1;color:#fffaf7}
+.overlay p{margin-top:14px;font-weight:300;letter-spacing:.04em;color:#fbeae3;opacity:.85}
+
+/* simple loading bar shown until frames are decoded */
+.loader{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:180px;height:2px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden;transition:opacity .5s}
+.loader span{display:block;height:100%;width:0;background:var(--coral);transition:width .15s linear}
+.loader.done{opacity:0}
